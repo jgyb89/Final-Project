@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Food Menu Item Form</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Assume this element shows after successful login -->
+    <div id="loggedInContainer">
+        <h2>Add Food Menu Item</h2>
+        <form id="foodMenuItemForm">
+            <label for="item">Item:</label>
+            <input type="text" id="item" name="item" required><br><br>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea><br><br>
+
+            <label for="price">Price:</label>
+            <input type="number" step="0.01" id="price" name="price" required><br><br>
+
+            <input type="submit" value="Add Item">
+        </form>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // Replace with your actual session token and API key
+            const sessionToken = "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqYW1lc2dyZWVuIiwiaXNzIjoiaWN0NDUxMC5kdS5lZHUiLCJpYXQiOjE2OTI0Nzk3MDcsImV4cCI6MTY5MjUwODUwN30.S619NIXXo2OoTeFpP9vRwcM8hN2mw09ZKXx4cY___Jtq_1ILKykSoDH1nj0agne9U3dKxxtqVMfiB79QQl2j0w";
+            const apiKey = "1c9eba53d73d107f1da8ca54692b2d02";
+
+            $("#foodMenuItemForm").submit(function (event) {
+                event.preventDefault();
+
+                const item = $("#item").val();
+                const description = $("#description").val();
+                const price = parseFloat($("#price").val());
+
+                const apiUrl = `https://ict4510.herokuapp.com/api/menus?api_key=${apiKey}`;
+
+                $.ajax({
+                    url: apiUrl,
+                    type: "POST",
+                    data: {
+                        item: item,
+                        description: description,
+                        price: price
+                    },
+                    headers: {
+                        "x-access-token": sessionToken
+                    },
+                    success: function (response) {
+                        alert("Item added successfully!");
+                        // You can perform additional actions upon success if needed
+                    },
+                    error: function (error) {
+                        alert("An error occurred while adding the item.");
+                        console.error(error);
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

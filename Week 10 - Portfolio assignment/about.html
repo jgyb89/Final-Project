@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<HTML>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aza Cat Café</title>
+    <meta lang="en">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">
+            <p style="font-size: 24px; padding-top: 10px; font-weight: bold;"> Aza Cat Café</p>
+        </a>
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <ul class="menu">
+            <li><a href="about.html">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="login.html"><i class="fa fa-user" aria-hidden="true"></i><span class="login"
+                        style="color: white;">Login
+                    </span></a>
+            </li>
+        </ul>
+    </header>
+
+    <div id="map"></div>
+
+    <div class="about-content">
+    <div class="form-container">
+
+        <form>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+    
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+    
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+    
+          <button class="submit" type="submit">Submit</button>
+        </form>
+      </div>
+      <div class="description">
+        <h2>2150 East Evans Avenue</h2><br>
+        <p><b>(620) 719-6897</b></p><br>
+        <table class="customTable">
+            <thead>
+              <tr>
+                <th>Days</th>
+                <th>Hours</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mon - Thurs</td>
+                <td>7:00 am - 9:00 pm</td>
+              </tr>
+              <tr>
+                <td>Fri - Sat</td>
+                <td>7:00 am - 11:00 pm</td>
+              </tr>
+              <tr>
+                <td>Sunday</td>
+                <td>7:00 am - 3:00 pm</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- Generated at CSSPortal.com -->
+          
+          
+      </div>
+    </div>
+
+    <script src="js/map.js"></script>
+
+</body>
+<footer>
+    <div class="footer">
+        <div class="footer-column">
+            <a href="index.html" class="logo">
+                <p style="font-size: 20px; padding-top: 10px;"> Aza Cat Café</p>
+            </a>
+        </div>
+        <div class="footer-column">
+            <div class="social">
+                <a href=""><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="copyrite">
+        <p style="padding: 5px; font-size: 14px; color:#fff;">University of Denver ICT 4510 Portfolio Assignment</p>
+    </div>
+</footer>
+
+</HTML>
